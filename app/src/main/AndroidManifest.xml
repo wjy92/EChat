@@ -20,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity
+            android:label=""
             android:name=".activity.ConversationActivity"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>

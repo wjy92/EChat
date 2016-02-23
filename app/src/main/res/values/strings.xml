@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">EChat</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_message">消息</string>
+    <string name="main_tab1">消息</string>
+    <string name="main_tab2">通讯录</string>
+    <string name="main_tab3">应用</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

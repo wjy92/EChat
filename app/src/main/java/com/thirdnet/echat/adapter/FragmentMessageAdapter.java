@@ -1,7 +1,6 @@
 package com.thirdnet.echat.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +8,7 @@ import android.view.ViewGroup;
 
 import com.jakewharton.rxbinding.view.RxView;
 import com.thirdnet.echat.R;
-import com.thirdnet.echat.activity.ConversationActivity;
+import com.thirdnet.echat.activity.MainActivity;
 import com.tr4android.support.extension.widget.CircleImageView;
 
 import java.util.Random;
@@ -44,7 +43,7 @@ public class FragmentMessageAdapter extends RecyclerView.Adapter {
                 .subscribe(new Action1<Void>() {
                     @Override
                     public void call(Void aVoid) {
-                        mContext.startActivity(new Intent(mContext, ConversationActivity.class));
+                        ((MainActivity) mContext).startActivity();
                     }
                 });
 

@@ -1,6 +1,9 @@
 package com.thirdnet.echat.activity;
 
+import android.app.ActivityOptions;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -16,24 +19,29 @@ import android.view.MenuItem;
 
 import com.thirdnet.echat.R;
 import com.thirdnet.echat.fragment.MessageFragment;
-import com.tr4android.support.extension.widget.CircleImageView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private List<String> mTitles;
 
-
+    @Bind(R.id.appbar)
+    AppBarLayout mAppBar;
+    @Bind(R.id.toolbar)
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = $(R.id.toolbar);
+        ButterKnife.bind(this);
         setSupportActionBar(toolbar);
         if (mTitles == null)
             mTitles = Arrays.asList(getResources().getString(R.string.main_tab1), getResources().getString(R.string.main_tab2), getResources().getString(R.string.main_tab3));
@@ -55,6 +63,10 @@ public class MainActivity extends BaseActivity
         TabLayout tl = $(R.id.tl);
         tl.setTabMode(TabLayout.MODE_FIXED);
         tl.setupWithViewPager(vp);
+    }
+
+    public void startActivity() {
+        startActivity(new Intent(this,ConversationActivity.class),ActivityOptions.makeSceneTransitionAnimation(this, mAppBar, "tool").toBundle());
     }
 
 
@@ -85,6 +97,11 @@ public class MainActivity extends BaseActivity
         }
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ButterKnife.unbind(this);
+    }
 
     @Override
     public void onBackPressed() {

@@ -37,4 +37,10 @@ public class ConversationActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.activity_conversation, menu);
         return true;
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ButterKnife.unbind(this);
+    }
 }

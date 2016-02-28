@@ -45,7 +45,13 @@ public class ConversationActivity extends AppCompatActivity {
         mToolbar.setNavigationIcon(mMaterialMenuDrawable);
         mMaterialMenuDrawable.setIconState(MaterialMenuDrawable.IconState.BURGER);
         mMaterialMenuDrawable.setTransformationDuration(600);
-        mMaterialMenuDrawable.animateIconState(MaterialMenuDrawable.IconState.ARROW);
+        mToolbar.post(new Runnable() {
+            @Override
+            public void run() {
+                mMaterialMenuDrawable.animateIconState(MaterialMenuDrawable.IconState.ARROW);
+            }
+        });
+
 
         mRv.setHasFixedSize(true);
         mRv.setLayoutManager(new LinearLayoutManager(this));

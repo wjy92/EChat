@@ -31,5 +31,6 @@ dependencies {
     compile 'io.reactivex:rxjava:1.1.1'
     compile 'io.reactivex:rxandroid:1.1.0'
     compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.balysv.materialmenu:material-menu-abc:1.+'
     compile project(':appcompat-extension')
 }

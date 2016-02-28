@@ -66,6 +66,7 @@ public class MainActivity extends BaseActivity
     }
 
     public void startActivity() {
+
         startActivity(new Intent(this,ConversationActivity.class),ActivityOptions.makeSceneTransitionAnimation(this, mAppBar, "tool").toBundle());
     }
 

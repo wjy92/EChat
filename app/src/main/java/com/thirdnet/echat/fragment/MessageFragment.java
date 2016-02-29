@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.thirdnet.echat.R;
-import com.thirdnet.echat.adapter.FragmentMessageAdapter;
+import com.thirdnet.echat.adapter.FragmentMessageListAdapter;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -36,7 +36,7 @@ public class MessageFragment extends Fragment {
         ButterKnife.bind(this, rootView);
         mRv.setHasFixedSize(true);
         mRv.setLayoutManager(new LinearLayoutManager(getContext()));
-        mRv.setAdapter(new FragmentMessageAdapter(getContext()));
+        mRv.setAdapter(new FragmentMessageListAdapter(getContext()));
         mRv.setItemAnimator(new DefaultItemAnimator());
         return rootView;
     }

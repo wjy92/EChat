@@ -13,6 +13,8 @@
     <dimen name="smallTitleTextSize">16sp</dimen>
     <dimen name="appbarTextSize">20sp</dimen>
     <dimen name="bigTitleTextSize">24sp</dimen>
+    <dimen name="session_message_margin">96dp</dimen>
+    <dimen name="session_message_text_padding">10dp</dimen>
 
 
 </resources>

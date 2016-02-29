@@ -2,6 +2,7 @@ package com.thirdnet.echat.activity;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.NavigationView;
@@ -66,8 +67,10 @@ public class MainActivity extends BaseActivity
     }
 
     public void startActivity() {
-
-        startActivity(new Intent(this,ConversationActivity.class),ActivityOptions.makeSceneTransitionAnimation(this, mAppBar, "tool").toBundle());
+        if (Build.VERSION.SDK_INT >= 21)
+            startActivity(new Intent(this, ConversationActivity.class), ActivityOptions.makeSceneTransitionAnimation(this, mAppBar, "tool").toBundle());
+        else
+            startActivity(new Intent(this, ConversationActivity.class));
     }
 
 

@@ -11,7 +11,7 @@ import android.view.View;
 
 import com.balysv.materialmenu.MaterialMenuDrawable;
 import com.thirdnet.echat.R;
-import com.thirdnet.echat.adapter.FragmentMessageAdapter;
+import com.thirdnet.echat.adapter.SessionAdapter;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -31,12 +31,11 @@ public class ConversationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conversation);
         ButterKnife.bind(this);
-
         setSupportActionBar(mToolbar);
+
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 onBackPressed();
             }
         });
@@ -55,7 +54,7 @@ public class ConversationActivity extends AppCompatActivity {
 
         mRv.setHasFixedSize(true);
         mRv.setLayoutManager(new LinearLayoutManager(this));
-        mRv.setAdapter(new FragmentMessageAdapter(this));
+        mRv.setAdapter(new SessionAdapter(this));
 
     }
 

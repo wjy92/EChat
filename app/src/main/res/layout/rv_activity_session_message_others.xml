@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.tr4android.support.extension.widget.CircleImageView
+        android:id="@+id/portrait"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:src="@mipmap/portrait_test0" />
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/session_message_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_toRightOf="@id/portrait"
+        android:background="@drawable/bg_session_message_other"
+        android:padding="@dimen/session_message_text_padding"
+        android:textColor="@color/textWhite" />
+</RelativeLayout>

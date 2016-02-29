@@ -20,12 +20,12 @@ import rx.functions.Action1;
  * 作者：杨水强
  * 时间：2016/2/19
  */
-public class FragmentMessageAdapter extends RecyclerView.Adapter {
+public class FragmentMessageListAdapter extends RecyclerView.Adapter {
     private Context mContext;
     private Random mRandom;
     private int[] mResIDs = new int[]{R.mipmap.portrait_test0, R.mipmap.portrait_test1, R.mipmap.portrait_test2};
 
-    public FragmentMessageAdapter(Context context) {
+    public FragmentMessageListAdapter(Context context) {
         mContext = context;
         mRandom = new Random();
     }

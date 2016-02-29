@@ -15,4 +15,6 @@
     <color name="sessionMessageMine">#ffffff</color>
     <color name="sessionMessageOthers">#3F51B5</color>
     <color name="sessionMessageBackgroud">#fafafa</color>
+
+    <color name="white">#ffffff</color>
 </resources>

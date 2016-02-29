@@ -43,6 +43,8 @@
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:hint="写消息" />
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

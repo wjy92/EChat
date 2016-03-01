@@ -24,5 +24,6 @@
         android:layout_toLeftOf="@id/portrait"
         android:background="@drawable/bg_session_message_mine"
         android:padding="@dimen/session_message_text_padding"
-        android:textColor="@color/textWhite" />
+        android:textColor="@color/textWhite"
+        android:textSize="@dimen/textSize" />
 </RelativeLayout>

@@ -30,13 +30,12 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
-    private List<String> mTitles;
-
     @Bind(R.id.appbar)
     AppBarLayout mAppBar;
     @Bind(R.id.toolbar)
     Toolbar toolbar;
+
+    private List<String> mTitles;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

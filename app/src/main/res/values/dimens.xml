@@ -17,4 +17,11 @@
     <dimen name="session_message_text_padding">10dp</dimen>
 
 
+    <dimen name="login_mp_corner_radius_2">2dp</dimen>
+    <dimen name="login_mp_width_100">200dp</dimen>
+    <dimen name="login_mp_width_200">300dp</dimen>
+    <dimen name="login_mp_height_56">56dp</dimen>
+    <dimen name="login_mp_height_8">8dp</dimen>
+    <dimen name="login_mp_corner_radius_4">4dp</dimen>
+
 </resources>

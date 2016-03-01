@@ -39,7 +39,7 @@ public class FragmentMessageListAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         ((MessageViewHolder) holder).circleImageView.setImageResource(mResIDs[mRandom.nextInt(3)]);
         RxView.clicks(((MessageViewHolder) holder).view)
-                .throttleFirst(500, TimeUnit.MILLISECONDS)
+                .throttleFirst(800, TimeUnit.MILLISECONDS)
                 .subscribe(new Action1<Void>() {
                     @Override
                     public void call(Void aVoid) {

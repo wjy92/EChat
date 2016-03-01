@@ -1,1 +1,1 @@
-include ':app',":appcompat-extension"
+include ':app', ":appcompat-extension", ":morphing-button"

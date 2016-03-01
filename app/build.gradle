@@ -33,4 +33,5 @@ dependencies {
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.balysv.materialmenu:material-menu-abc:1.+'
     compile project(':appcompat-extension')
+    compile project(':morphing-button')
 }

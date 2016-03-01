@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/EChat.iml" filepath="$PROJECT_DIR$/EChat.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/appcompat-extension/appcompat-extension.iml" filepath="$PROJECT_DIR$/appcompat-extension/appcompat-extension.iml" />
+      <module fileurl="file://$PROJECT_DIR$/morphing-button/morphing-button.iml" filepath="$PROJECT_DIR$/morphing-button/morphing-button.iml" />
     </modules>
   </component>
 </project>

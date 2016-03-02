@@ -31,12 +31,15 @@ public class SessionAdapter extends RecyclerView.Adapter {
 
     private Context mContext;
 
+    private RecyclerView mRv;
+
     private static final int TYPE_OTHERS = 100;
 
     private static final int TYPE_MINE = 101;
 
-    public SessionAdapter(Context context) {
+    public SessionAdapter(Context context, RecyclerView recyclerView) {
         mContext = context;
+        mRv = recyclerView;
         mTargetPerson = new PersonBean(1l, R.mipmap.portrait_test1);
         mMessages = new ArrayList<>();
         MessageBean messageBean = new MessageBean(mTargetPerson, "你想和我聊什么？");
@@ -64,7 +67,6 @@ public class SessionAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof SessionMineViewHolder) {
-            ((SessionMineViewHolder) holder).portrait.setImageResource(mMessages.get(position).getPersonBean().getPortrait());
             ((SessionMineViewHolder) holder).message.setText(mMessages.get(position).getMsg());
         } else {
             ((SessionOthersViewHolder) holder).portrait.setImageResource(mMessages.get(position).getPersonBean().getPortrait());
@@ -75,6 +77,14 @@ public class SessionAdapter extends RecyclerView.Adapter {
     @Override
     public int getItemCount() {
         return mMessages.size();
+    }
+
+    public void newMessage(String message) {
+        int preEnd = mMessages.size();
+        MessageBean messageBean = new MessageBean(((MyApp) (mContext.getApplicationContext())).getMyInfo(), message);
+        mMessages.add(preEnd, messageBean);
+        notifyItemInserted(preEnd);
+        mRv.scrollToPosition(preEnd);
     }
 
     class SessionOthersViewHolder extends RecyclerView.ViewHolder {
@@ -90,11 +100,9 @@ public class SessionAdapter extends RecyclerView.Adapter {
 
     class SessionMineViewHolder extends RecyclerView.ViewHolder {
         TextView message;
-        CircleImageView portrait;
 
         public SessionMineViewHolder(View itemView) {
             super(itemView);
-            portrait = (CircleImageView) itemView.findViewById(R.id.portrait);
             message = (TextView) itemView.findViewById(R.id.message);
         }
     }

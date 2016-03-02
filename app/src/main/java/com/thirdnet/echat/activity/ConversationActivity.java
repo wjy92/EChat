@@ -3,28 +3,55 @@ package com.thirdnet.echat.activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.balysv.materialmenu.MaterialMenuDrawable;
+import com.jakewharton.rxbinding.view.RxView;
 import com.thirdnet.echat.R;
 import com.thirdnet.echat.adapter.SessionAdapter;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import rx.functions.Action1;
 
 public class ConversationActivity extends AppCompatActivity {
 
     @Bind(R.id.toolbar)
     Toolbar mToolbar;
 
+    /**
+     * 消息主体RecyclerView
+     */
     @Bind(R.id.rv)
     RecyclerView mRv;
 
+    /**
+     * 发送按钮
+     */
+    @Bind(R.id.send)
+    ImageView mSend;
+
+    /**
+     * 消息内容编辑文本
+     */
+    @Bind(R.id.message_edittext)
+    EditText mMessage;
+
+    /**
+     * 左上角导航栏所用图标
+     */
     private MaterialMenuDrawable mMaterialMenuDrawable;
+
+
+    private SessionAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,10 +78,22 @@ public class ConversationActivity extends AppCompatActivity {
             }
         });
 
+        RxView.clicks(mSend).subscribe(new Action1<Void>() {
+            @Override
+            public void call(Void aVoid) {
+                if (!TextUtils.isEmpty(mMessage.getText())) {
+                    mAdapter.newMessage(mMessage.getText().toString());
+                    mMessage.setText("");
+                }
+            }
+        });
+
 
         mRv.setHasFixedSize(true);
         mRv.setLayoutManager(new LinearLayoutManager(this));
-        mRv.setAdapter(new SessionAdapter(this));
+        mAdapter = new SessionAdapter(this, mRv);
+        mRv.setAdapter(mAdapter);
+        mRv.setItemAnimator(new DefaultItemAnimator());
 
     }
 

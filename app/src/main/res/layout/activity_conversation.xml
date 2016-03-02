@@ -52,21 +52,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:layout_marginBottom="4dp"
+                android:layout_marginBottom="10dp"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:src="@drawable/ic_face" />
 
             <EditText
                 android:id="@+id/message_edittext"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
                 android:background="@color/sessionMessageBackgroud"
                 android:hint="写消息"
-                android:paddingBottom="8dp"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
-                android:paddingTop="8dp"
+                android:paddingBottom="12dp"
+                android:paddingTop="12dp"
+                android:textColor="@color/textBlack"
                 android:textSize="@dimen/textSize" />
+
+            <ImageView
+                android:id="@+id/send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:src="@drawable/ic_send" />
 
 
         </LinearLayout>

@@ -20,6 +20,7 @@ import android.view.MenuItem;
 
 import com.thirdnet.echat.R;
 import com.thirdnet.echat.fragment.MessageFragment;
+import com.tr4android.support.extension.widget.CircleImageView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -34,6 +35,7 @@ public class MainActivity extends BaseActivity
     AppBarLayout mAppBar;
     @Bind(R.id.toolbar)
     Toolbar toolbar;
+
 
     private List<String> mTitles;
 
@@ -55,6 +57,10 @@ public class MainActivity extends BaseActivity
         NavigationView navigationView = $(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        ((CircleImageView) navigationView.getHeaderView(0).findViewById(R.id.portrait)).setImageResource(R.mipmap.portrait_test1);
+
+//        ((CircleImageView) navigationView.findViewById(R.id.portrait)).setImageResource(R.mipmap.portrait_test0);
+
 
         ViewPager vp = $(R.id.vp);
         vp.setOffscreenPageLimit(3);
@@ -63,6 +69,7 @@ public class MainActivity extends BaseActivity
         TabLayout tl = $(R.id.tl);
         tl.setTabMode(TabLayout.MODE_FIXED);
         tl.setupWithViewPager(vp);
+
     }
 
     public void startActivity() {
@@ -144,22 +151,12 @@ public class MainActivity extends BaseActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        if (id == R.id.nav_manage) {
+            startActivity(new Intent(MainActivity.this, SettingsActivity.class));
         }
 
-        DrawerLayout drawer = $(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+//        DrawerLayout drawer = $(R.id.drawer_layout);
+//        drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 }

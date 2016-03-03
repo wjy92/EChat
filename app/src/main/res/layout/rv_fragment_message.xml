@@ -41,11 +41,11 @@
             android:textSize="@dimen/smallTextSize" />
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="72dp"
-        android:background="@color/divideBlack" />
+    <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_marginLeft="72dp"-->
+        <!--android:background="@color/divideBlack" />-->
 
 </RelativeLayout>

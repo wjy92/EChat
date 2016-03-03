@@ -3,9 +3,5 @@
     <translate
         android:duration="@integer/window_animation_duration"
         android:fromXDelta="0%"
-        android:toXDelta="-80%" />
-    <alpha
-        android:duration="@integer/window_animation_duration"
-        android:fromAlpha="1.0"
-        android:toAlpha="0.2" />
+        android:toXDelta="-100%" />
 </set>

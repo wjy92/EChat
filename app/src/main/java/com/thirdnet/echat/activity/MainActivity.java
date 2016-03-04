@@ -14,6 +14,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,12 +30,21 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends BaseActivity
+public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     @Bind(R.id.appbar)
     AppBarLayout mAppBar;
     @Bind(R.id.toolbar)
     Toolbar toolbar;
+    @Bind(R.id.drawer_layout)
+    DrawerLayout mDrawer;
+    @Bind(R.id.nav_view)
+    NavigationView mNavigationView;
+
+    @Bind(R.id.vp)
+    ViewPager mVp;
+    @Bind(R.id.tl)
+    TabLayout tl;
 
 
     private List<String> mTitles;
@@ -47,28 +57,20 @@ public class MainActivity extends BaseActivity
         setSupportActionBar(toolbar);
         if (mTitles == null)
             mTitles = Arrays.asList(getResources().getString(R.string.main_tab1), getResources().getString(R.string.main_tab2), getResources().getString(R.string.main_tab3));
-
-        DrawerLayout drawer = $(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
+                this, mDrawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        mDrawer.setDrawerListener(toggle);
         toggle.syncState();
+        mNavigationView.setNavigationItemSelectedListener(this);
 
-        NavigationView navigationView = $(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-
-        ((CircleImageView) navigationView.getHeaderView(0).findViewById(R.id.portrait)).setImageResource(R.mipmap.portrait_test1);
-
-//        ((CircleImageView) navigationView.findViewById(R.id.portrait)).setImageResource(R.mipmap.portrait_test0);
+        ((CircleImageView) mNavigationView.getHeaderView(0).findViewById(R.id.portrait)).setImageResource(R.mipmap.portrait_test1);
 
 
-        ViewPager vp = $(R.id.vp);
-        vp.setOffscreenPageLimit(3);
-        vp.setAdapter(new VpAdapter(getSupportFragmentManager()));
+        mVp.setOffscreenPageLimit(3);
+        mVp.setAdapter(new VpAdapter(getSupportFragmentManager()));
 
-        TabLayout tl = $(R.id.tl);
         tl.setTabMode(TabLayout.MODE_FIXED);
-        tl.setupWithViewPager(vp);
+        tl.setupWithViewPager(mVp);
 
     }
 
@@ -115,9 +117,8 @@ public class MainActivity extends BaseActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = $(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
+        if (mDrawer.isDrawerOpen(GravityCompat.START)) {
+            mDrawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
         }

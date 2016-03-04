@@ -3,20 +3,19 @@
     <SwitchPreference
         android:defaultValue="true"
         android:key="example_switch"
-        android:summary="说明说明说明说明说明说明说明说明"
-        android:title="设置1" />
+        android:summary="有消息进来时将铃声提醒"
+        android:title="是否开启声音" />
 
     <!-- NOTE: EditTextPreference accepts EditText attributes. -->
     <!-- NOTE: EditTextPreference's summary should be set to its value by the activity code. -->
     <EditTextPreference
         android:capitalize="words"
-        android:defaultValue="@string/pref_default_display_name"
-        android:inputType="textCapWords"
+        android:inputType="textNoSuggestions"
         android:key="example_text"
         android:maxLines="1"
         android:selectAllOnFocus="true"
         android:singleLine="true"
-        android:title="设置2" />
+        android:title="职位" />
 
     <!-- NOTE: Hide buttons to simplify the UI. Users can touch outside the dialog to
          dismiss it. -->
@@ -24,10 +23,10 @@
     <ListPreference
         android:defaultValue="-1"
         android:entries="@array/pref_example_list_titles"
-        android:entryValues="@array/pref_example_list_values"
+        android:entryValues="@array/pref_example_list_titles"
         android:key="example_list"
         android:negativeButtonText="@null"
         android:positiveButtonText="@null"
-        android:title="设置3" />
+        android:title="是否震动" />
 
 </PreferenceScreen>

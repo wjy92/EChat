@@ -19,6 +19,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.jakewharton.rxbinding.view.RxView;
 import com.thirdnet.echat.R;
 import com.thirdnet.echat.fragment.MessageFragment;
 import com.tr4android.support.extension.widget.CircleImageView;
@@ -29,24 +30,32 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import rx.functions.Action1;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
     @Bind(R.id.appbar)
     AppBarLayout mAppBar;
+
     @Bind(R.id.toolbar)
     Toolbar toolbar;
+
     @Bind(R.id.drawer_layout)
     DrawerLayout mDrawer;
+
     @Bind(R.id.nav_view)
     NavigationView mNavigationView;
 
     @Bind(R.id.vp)
     ViewPager mVp;
+
     @Bind(R.id.tl)
     TabLayout tl;
 
-
+    /**
+     * TabLayout中的显示标题
+     */
     private List<String> mTitles;
 
     @Override
@@ -63,7 +72,14 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
         mNavigationView.setNavigationItemSelectedListener(this);
 
-        ((CircleImageView) mNavigationView.getHeaderView(0).findViewById(R.id.portrait)).setImageResource(R.mipmap.portrait_test1);
+        CircleImageView portrait = (CircleImageView) mNavigationView.getHeaderView(0).findViewById(R.id.portrait);
+        portrait.setImageResource(R.mipmap.portrait_test1);
+        RxView.clicks(portrait).subscribe(new Action1<Void>() {
+            @Override
+            public void call(Void aVoid) {
+                startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+            }
+        });
 
 
         mVp.setOffscreenPageLimit(3);

@@ -31,7 +31,7 @@
             android:label="@string/title_activity_settings" />
         <activity
             android:name=".activity.ProfileActivity"
-            android:label="@string/title_activity_profile"
+            android:label="杨水强"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

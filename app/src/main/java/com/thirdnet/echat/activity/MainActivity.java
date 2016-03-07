@@ -72,12 +72,17 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
         mNavigationView.setNavigationItemSelectedListener(this);
 
-        CircleImageView portrait = (CircleImageView) mNavigationView.getHeaderView(0).findViewById(R.id.portrait);
+        final CircleImageView portrait = (CircleImageView) mNavigationView.getHeaderView(0).findViewById(R.id.portrait);
         portrait.setImageResource(R.mipmap.portrait_test1);
         RxView.clicks(portrait).subscribe(new Action1<Void>() {
             @Override
             public void call(Void aVoid) {
-                startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+                if (Build.VERSION.SDK_INT < 30)
+                    startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+                else {
+                    ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, portrait, "portrait");
+                    startActivity(new Intent(MainActivity.this, ProfileActivity.class), activityOptions.toBundle());
+                }
             }
         });
 

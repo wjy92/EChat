@@ -1,5 +1,6 @@
 package com.thirdnet.echat.activity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
 
+import com.balysv.materialmenu.MaterialMenuDrawable;
 import com.thirdnet.echat.R;
 
 import butterknife.Bind;
@@ -18,6 +20,12 @@ public class ProfileActivity extends AppCompatActivity {
     @Bind(R.id.toolbar)
     Toolbar mToolbar;
 
+
+    /**
+     * 左上角导航栏所用图标
+     */
+    private MaterialMenuDrawable mMaterialMenuDrawable;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +33,18 @@ public class ProfileActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         setSupportActionBar(mToolbar);
         mToolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_24dp);
+        mMaterialMenuDrawable = new MaterialMenuDrawable(this, Color.WHITE, MaterialMenuDrawable.Stroke.THIN);
+        mToolbar.setNavigationIcon(mMaterialMenuDrawable);
+        mMaterialMenuDrawable.setIconState(MaterialMenuDrawable.IconState.BURGER);
+        mMaterialMenuDrawable.setTransformationDuration(600);
+        mToolbar.post(new Runnable() {
+            @Override
+            public void run() {
+                mMaterialMenuDrawable.animateIconState(MaterialMenuDrawable.IconState.ARROW);
+            }
+        });
+
+
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,6 +62,12 @@ public class ProfileActivity extends AppCompatActivity {
         });
     }
 
+
+    @Override
+    public void onBackPressed() {
+        mMaterialMenuDrawable.animateIconState(MaterialMenuDrawable.IconState.BURGER);
+        super.onBackPressed();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -21,6 +21,7 @@ import android.view.MenuItem;
 
 import com.jakewharton.rxbinding.view.RxView;
 import com.thirdnet.echat.R;
+import com.thirdnet.echat.fragment.LinkmanFragment;
 import com.thirdnet.echat.fragment.MessageFragment;
 import com.tr4android.support.extension.widget.CircleImageView;
 
@@ -103,6 +104,8 @@ public class MainActivity extends AppCompatActivity
     }
 
 
+
+
     class VpAdapter extends FragmentPagerAdapter {
         List<Fragment> mList;
 
@@ -111,7 +114,7 @@ public class MainActivity extends AppCompatActivity
             mList = new ArrayList<>();
             mList.add(new MessageFragment());
             mList.add(new MessageFragment());
-            mList.add(new MessageFragment());
+            mList.add(new LinkmanFragment());
         }
 
         @Override

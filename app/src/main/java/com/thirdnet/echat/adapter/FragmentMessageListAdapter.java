@@ -1,6 +1,9 @@
 package com.thirdnet.echat.adapter;
 
+import android.app.ActivityOptions;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.jakewharton.rxbinding.view.RxView;
 import com.thirdnet.echat.R;
+import com.thirdnet.echat.activity.ConversationActivity;
 import com.thirdnet.echat.activity.MainActivity;
 import com.tr4android.support.extension.widget.CircleImageView;
 
@@ -43,7 +47,11 @@ public class FragmentMessageListAdapter extends RecyclerView.Adapter {
                 .subscribe(new Action1<Void>() {
                     @Override
                     public void call(Void aVoid) {
-                        ((MainActivity) mContext).startActivity();
+                        if (Build.VERSION.SDK_INT >= 21)
+                            mContext.startActivity(new Intent(mContext, ConversationActivity.class)
+                                    , ActivityOptions.makeSceneTransitionAnimation((MainActivity) mContext, ((MainActivity) mContext).mAppBar, "appbar").toBundle());
+                        else
+                            mContext.startActivity(new Intent(mContext, ConversationActivity.class));
                     }
                 });
 

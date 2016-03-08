@@ -78,12 +78,7 @@ public class MainActivity extends AppCompatActivity
         RxView.clicks(portrait).subscribe(new Action1<Void>() {
             @Override
             public void call(Void aVoid) {
-                if (Build.VERSION.SDK_INT < 30)
-                    startActivity(new Intent(MainActivity.this, ProfileActivity.class));
-                else {
-                    ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, portrait, "portrait");
-                    startActivity(new Intent(MainActivity.this, ProfileActivity.class), activityOptions.toBundle());
-                }
+                startActivity(new Intent(MainActivity.this, ProfileActivity.class));
             }
         });
 
@@ -94,13 +89,6 @@ public class MainActivity extends AppCompatActivity
         tl.setTabMode(TabLayout.MODE_FIXED);
         tl.setupWithViewPager(mVp);
 
-    }
-
-    public void startActivity() {
-        if (Build.VERSION.SDK_INT >= 21)
-            startActivity(new Intent(this, ConversationActivity.class), ActivityOptions.makeSceneTransitionAnimation(this, mAppBar, "tool").toBundle());
-        else
-            startActivity(new Intent(this, ConversationActivity.class));
     }
 
 

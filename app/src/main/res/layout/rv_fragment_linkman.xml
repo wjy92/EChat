@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:maxLines="1"
-            android:text="这是消息标题"
+            android:text="杨水强"
             android:textColor="@color/textBlack"
             android:textSize="@dimen/textSize" />
 
@@ -38,7 +38,8 @@
             android:maxLines="1"
             android:text="这是消息内容"
             android:textColor="@color/sencondaryTextBlack"
-            android:textSize="@dimen/smallTextSize" />
+            android:textSize="@dimen/smallTextSize"
+            android:visibility="gone" />
     </LinearLayout>
 
     <!--<View-->

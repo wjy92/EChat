@@ -10,6 +10,7 @@ import android.view.View;
 
 import com.balysv.materialmenu.MaterialMenuDrawable;
 import com.thirdnet.echat.R;
+import com.tr4android.support.extension.widget.CircleImageView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -20,6 +21,9 @@ public class ProfileActivity extends AppCompatActivity {
 
     @Bind(R.id.toolbar)
     Toolbar mToolbar;
+
+    @Bind(R.id.cat_avatar)
+    CircleImageView mCircleImageView;
 
 
     /**
@@ -34,6 +38,7 @@ public class ProfileActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         setSupportActionBar(mToolbar);
         mToolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_24dp);
+        mCircleImageView.setImageResource(R.mipmap.portrait_test1);
 //        mToolbar.setLogo(getResources().getDrawable(R.mipmap.portrait_test1));
 //        else {
 //            mMaterialMenuDrawable = new MaterialMenuDrawable(this, Color.WHITE, MaterialMenuDrawable.Stroke.THIN);
@@ -48,14 +53,12 @@ public class ProfileActivity extends AppCompatActivity {
 //            });
 //        }
 
-
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
             }
         });
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -37,10 +37,10 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Bind(R.id.appbar)
-    AppBarLayout mAppBar;
+    public AppBarLayout mAppBar;
 
     @Bind(R.id.toolbar)
-    Toolbar toolbar;
+    public Toolbar toolbar;
 
     @Bind(R.id.drawer_layout)
     DrawerLayout mDrawer;
@@ -102,8 +102,6 @@ public class MainActivity extends AppCompatActivity
         else
             startActivity(new Intent(this, ConversationActivity.class));
     }
-
-
 
 
     class VpAdapter extends FragmentPagerAdapter {

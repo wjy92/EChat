@@ -1,6 +1,5 @@
 package com.thirdnet.echat.activity;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,6 +15,8 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class ProfileActivity extends AppCompatActivity {
+
+    public static final String MORPHING_FLAG = "MORPHING_FLAG";
 
     @Bind(R.id.toolbar)
     Toolbar mToolbar;
@@ -33,16 +34,19 @@ public class ProfileActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         setSupportActionBar(mToolbar);
         mToolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_24dp);
-        mMaterialMenuDrawable = new MaterialMenuDrawable(this, Color.WHITE, MaterialMenuDrawable.Stroke.THIN);
-        mToolbar.setNavigationIcon(mMaterialMenuDrawable);
-        mMaterialMenuDrawable.setIconState(MaterialMenuDrawable.IconState.BURGER);
-        mMaterialMenuDrawable.setTransformationDuration(600);
-        mToolbar.post(new Runnable() {
-            @Override
-            public void run() {
-                mMaterialMenuDrawable.animateIconState(MaterialMenuDrawable.IconState.ARROW);
-            }
-        });
+//        mToolbar.setLogo(getResources().getDrawable(R.mipmap.portrait_test1));
+//        else {
+//            mMaterialMenuDrawable = new MaterialMenuDrawable(this, Color.WHITE, MaterialMenuDrawable.Stroke.THIN);
+//            mToolbar.setNavigationIcon(mMaterialMenuDrawable);
+//            mMaterialMenuDrawable.setIconState(MaterialMenuDrawable.IconState.BURGER);
+//            mMaterialMenuDrawable.setTransformationDuration(600);
+//            mToolbar.post(new Runnable() {
+//                @Override
+//                public void run() {
+//                    mMaterialMenuDrawable.animateIconState(MaterialMenuDrawable.IconState.ARROW);
+//                }
+//            });
+//        }
 
 
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -65,7 +69,8 @@ public class ProfileActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        mMaterialMenuDrawable.animateIconState(MaterialMenuDrawable.IconState.BURGER);
+        if (mMaterialMenuDrawable != null)
+            mMaterialMenuDrawable.animateIconState(MaterialMenuDrawable.IconState.BURGER);
         super.onBackPressed();
     }
 

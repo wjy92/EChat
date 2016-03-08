@@ -32,7 +32,7 @@
         <activity
             android:name=".activity.ProfileActivity"
             android:label="杨水强"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

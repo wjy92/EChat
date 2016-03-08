@@ -47,10 +47,13 @@ public class FragmentLinkmanListAdapter extends RecyclerView.Adapter {
                 .subscribe(new Action1<Void>() {
                     @Override
                     public void call(Void aVoid) {
-                        if (Build.VERSION.SDK_INT >= 21)
-                            mContext.startActivity(new Intent(mContext, ProfileActivity.class), ActivityOptions.makeSceneTransitionAnimation((MainActivity) mContext, ((LinkmanViewHolder) holder).circleImageView, "portrait").toBundle());
-                        else
+                        if (Build.VERSION.SDK_INT >= 21) {
+                            Intent intent = new Intent(mContext, ProfileActivity.class);
+                            ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation((MainActivity) mContext, ((LinkmanViewHolder) holder).circleImageView, "portrait");
+                            mContext.startActivity(intent, activityOptions.toBundle());
+                        } else {
                             mContext.startActivity(new Intent(mContext, ProfileActivity.class));
+                        }
                     }
                 });
 

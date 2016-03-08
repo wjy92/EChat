@@ -34,4 +34,5 @@ dependencies {
     compile 'io.reactivex:rxandroid:1.1.0'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.balysv.materialmenu:material-menu-abc:1.+'
+    compile 'com.sloydev:collapsingavatartoolbar:1.0.0'
 }

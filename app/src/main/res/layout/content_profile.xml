@@ -13,7 +13,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingBottom="160dp"
         android:paddingTop="@dimen/activity_vertical_margin">
 
         <include layout="@layout/item_profile" />
@@ -34,6 +33,17 @@
 
         <include layout="@layout/item_profile_1" />
 
+        <include layout="@layout/item_profile" />
+
+        <include layout="@layout/item_profile_1" />
+
+        <include layout="@layout/item_profile" />
+
+        <include layout="@layout/item_profile_1" />
+
+        <include layout="@layout/item_profile" />
+
+        <include layout="@layout/item_profile_1" />
     </LinearLayout>
 
 

@@ -5,9 +5,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.support.v7.widget.RecyclerView;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.jakewharton.rxbinding.view.RxView;
 import com.thirdnet.echat.R;
@@ -48,8 +50,11 @@ public class FragmentLinkmanListAdapter extends RecyclerView.Adapter {
                                @Override
                                public void call(Void aVoid) {
                                    if (Build.VERSION.SDK_INT >= 21) {
+
                                        Intent intent = new Intent(mContext, ProfileActivity.class);
-                                       ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation((MainActivity) mContext, ((MainActivity) mContext).mAppBar, "appbar");
+                                       ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation((MainActivity) mContext
+                                               , Pair.create(((LinkmanViewHolder) holder).view, "info")
+                                               );
                                        mContext.startActivity(intent, activityOptions.toBundle());
                                    } else {
                                        mContext.startActivity(new Intent(mContext, ProfileActivity.class));
@@ -67,11 +72,13 @@ public class FragmentLinkmanListAdapter extends RecyclerView.Adapter {
 
     class LinkmanViewHolder extends RecyclerView.ViewHolder {
         CircleImageView circleImageView;
+        TextView textView;
         View view;
 
         public LinkmanViewHolder(View itemView) {
             super(itemView);
             circleImageView = (CircleImageView) itemView.findViewById(R.id.portrait);
+            textView = (TextView) itemView.findViewById(R.id.name);
             view = itemView;
         }
     }

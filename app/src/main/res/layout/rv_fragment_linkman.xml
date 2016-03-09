@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="80dp"
     android:background="@drawable/sl_fragment_message"
-    android:clickable="true">
+    android:clickable="true"
+    android:transitionName="info">
 
     <com.tr4android.support.extension.widget.CircleImageView
         android:id="@+id/portrait"
@@ -12,41 +13,18 @@
         android:layout_centerVertical="true"
         android:layout_marginLeft="@dimen/activity_horizontal_margin" />
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:layout_toRightOf="@id/portrait"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:maxLines="1"
-            android:text="杨水强"
-            android:textColor="@color/textBlack"
-            android:textSize="@dimen/textSize" />
-
-        <TextView
-            android:id="@+id/statement"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/title"
-            android:maxLines="1"
-            android:text="这是消息内容"
-            android:textColor="@color/sencondaryTextBlack"
-            android:textSize="@dimen/smallTextSize"
-            android:visibility="gone" />
-    </LinearLayout>
-
-    <!--<View-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="1dp"-->
-    <!--android:layout_alignParentBottom="true"-->
-    <!--android:layout_marginLeft="72dp"-->
-    <!--android:background="@color/divideBlack" />-->
+        android:maxLines="1"
+        android:text="杨水强"
+        android:textColor="@color/textBlack"
+        android:textSize="@dimen/textSize"
+        android:transitionName="name" />
 
 </RelativeLayout>

@@ -1,10 +1,14 @@
 package com.thirdnet.echat.activity;
 
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.transition.Slide;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.View;
 
@@ -22,7 +26,7 @@ public class ProfileActivity extends AppCompatActivity {
     @Bind(R.id.toolbar)
     Toolbar mToolbar;
 
-    @Bind(R.id.cat_avatar)
+    @Bind(R.id.portrait)
     CircleImageView mCircleImageView;
 
 
@@ -37,21 +41,22 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         ButterKnife.bind(this);
         setSupportActionBar(mToolbar);
-        mToolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_24dp);
         mCircleImageView.setImageResource(R.mipmap.portrait_test1);
-//        mToolbar.setLogo(getResources().getDrawable(R.mipmap.portrait_test1));
-//        else {
-//            mMaterialMenuDrawable = new MaterialMenuDrawable(this, Color.WHITE, MaterialMenuDrawable.Stroke.THIN);
-//            mToolbar.setNavigationIcon(mMaterialMenuDrawable);
-//            mMaterialMenuDrawable.setIconState(MaterialMenuDrawable.IconState.BURGER);
-//            mMaterialMenuDrawable.setTransformationDuration(600);
-//            mToolbar.post(new Runnable() {
-//                @Override
-//                public void run() {
-//                    mMaterialMenuDrawable.animateIconState(MaterialMenuDrawable.IconState.ARROW);
-//                }
-//            });
-//        }
+
+        if (Build.VERSION.SDK_INT < 30)
+            mToolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_24dp);
+        else {
+            mMaterialMenuDrawable = new MaterialMenuDrawable(this, Color.WHITE, MaterialMenuDrawable.Stroke.THIN);
+            mToolbar.setNavigationIcon(mMaterialMenuDrawable);
+            mMaterialMenuDrawable.setIconState(MaterialMenuDrawable.IconState.BURGER);
+            mMaterialMenuDrawable.setTransformationDuration(600);
+            mToolbar.post(new Runnable() {
+                @Override
+                public void run() {
+                    mMaterialMenuDrawable.animateIconState(MaterialMenuDrawable.IconState.ARROW);
+                }
+            });
+        }
 
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

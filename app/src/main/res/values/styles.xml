@@ -11,6 +11,8 @@
     </style>
 
 
+
+
     <style name="ActivityAnimation">
         <item name="android:activityOpenEnterAnimation">@anim/activity_open_enter</item>
         <item name="android:activityOpenExitAnimation">@anim/activity_open_exit</item>

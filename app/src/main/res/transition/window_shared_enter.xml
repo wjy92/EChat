@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <transitionSet xmlns:android="http://schemas.android.com/apk/res/android">
-    <changeImageTransform android:duration="10000"/>
-    <changeBounds android:duration="10000"/>
+    <changeImageTransform android:duration="@integer/window_animation_duration"/>
+    <changeBounds android:duration="@integer/window_animation_duration"/>
+    <changeTransform android:duration="@integer/window_animation_duration"/>
 </transitionSet>

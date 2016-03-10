@@ -36,7 +36,7 @@ public class FragmentMessageListAdapter extends RecyclerView.Adapter {
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new MessageViewHolder(LayoutInflater.from(mContext).inflate(R.layout.rv_fragment_message, parent, false));
+        return new MessageViewHolder(LayoutInflater.from(mContext).inflate(R.layout.rv_fragment_message_list, parent, false));
     }
 
     @Override

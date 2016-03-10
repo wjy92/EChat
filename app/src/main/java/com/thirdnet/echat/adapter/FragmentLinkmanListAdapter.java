@@ -17,7 +17,6 @@ import com.thirdnet.echat.activity.MainActivity;
 import com.thirdnet.echat.activity.ProfileActivity;
 import com.tr4android.support.extension.widget.CircleImageView;
 
-import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import rx.functions.Action1;
@@ -28,17 +27,14 @@ import rx.functions.Action1;
  */
 public class FragmentLinkmanListAdapter extends RecyclerView.Adapter {
     private Context mContext;
-    private Random mRandom;
-    private int[] mResIDs = new int[]{R.mipmap.portrait_test0, R.mipmap.portrait_test1, R.mipmap.portrait_test2};
 
     public FragmentLinkmanListAdapter(Context context) {
         mContext = context;
-        mRandom = new Random();
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new LinkmanViewHolder(LayoutInflater.from(mContext).inflate(R.layout.rv_fragment_linkman, parent, false));
+        return new LinkmanViewHolder(LayoutInflater.from(mContext).inflate(R.layout.rv_fragment_linkman_list, parent, false));
     }
 
     @Override

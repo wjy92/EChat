@@ -18,6 +18,13 @@
         <!--<item name="android:windowSharedElementExitTransition">-->
             <!--@transition/window_shared_exit-->
         <!--</item>-->
+
+        <!--<item name="android:windowSharedElementReenterTransition">-->
+            <!--@transition/window_enter-->
+        <!--</item>-->
+        <!--<item name="android:windowSharedElementReturnTransition">-->
+            <!--@transition/window_exit-->
+        <!--</item>-->
     </style>
 
 

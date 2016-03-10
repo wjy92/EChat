@@ -20,6 +20,7 @@ import android.view.MenuItem;
 
 import com.jakewharton.rxbinding.view.RxView;
 import com.thirdnet.echat.R;
+import com.thirdnet.echat.fragment.ApplyFragment;
 import com.thirdnet.echat.fragment.LinkmanFragment;
 import com.thirdnet.echat.fragment.MessageFragment;
 import com.tr4android.support.extension.widget.CircleImageView;
@@ -101,7 +102,7 @@ public class MainActivity extends AppCompatActivity
             super(fm);
             mList = new ArrayList<>();
             mList.add(new MessageFragment());
-            mList.add(new MessageFragment());
+            mList.add(new ApplyFragment());
             mList.add(new LinkmanFragment());
         }
 

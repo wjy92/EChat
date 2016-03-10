@@ -5,19 +5,19 @@
         <item name="windowNoTitle">true</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:windowContentTransitions">true</item>
+        <!--<item name="android:windowContentTransitions">true</item>-->
 
-        <!-- specify enter and exit transitions -->
-        <item name="android:windowEnterTransition">@transition/window_enter</item>
-        <item name="android:windowExitTransition">@transition/window_exit</item>
+        <!--&lt;!&ndash; specify enter and exit transitions &ndash;&gt;-->
+        <!--<item name="android:windowEnterTransition">@transition/window_enter</item>-->
+        <!--<item name="android:windowExitTransition">@transition/window_exit</item>-->
 
-        <!-- specify shared element transitions -->
-        <item name="android:windowSharedElementEnterTransition">
-            @transition/window_shared_enter
-        </item>
-        <item name="android:windowSharedElementExitTransition">
-            @transition/window_shared_exit
-        </item>
+        <!--&lt;!&ndash; specify shared element transitions &ndash;&gt;-->
+        <!--<item name="android:windowSharedElementEnterTransition">-->
+            <!--@transition/window_shared_enter-->
+        <!--</item>-->
+        <!--<item name="android:windowSharedElementExitTransition">-->
+            <!--@transition/window_shared_exit-->
+        <!--</item>-->
     </style>
 
 

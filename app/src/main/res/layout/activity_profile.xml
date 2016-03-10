@@ -11,7 +11,6 @@
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/app_bar_height"
-        android:fitsSystemWindows="true"
         android:theme="@style/AppTheme.AppBarOverlay"
         android:transitionName="appbar">
 
@@ -19,24 +18,23 @@
             android:id="@+id/toolbar_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
+            android:transitionName="collapsing_layout"
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
-
 
             <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_gravity="bottom"
-                android:transitionName="info"
-                android:clickable="true">
+                android:transitionName="info">
 
                 <com.tr4android.support.extension.widget.CircleImageView
                     android:id="@+id/portrait"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin" />
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:transitionName="portrait" />
 
                 <TextView
                     android:id="@+id/name"
@@ -49,7 +47,7 @@
                     android:maxLines="1"
                     android:text="杨水强"
                     android:textColor="@color/textWhite"
-                    android:textSize="@dimen/bigTitleTextSize"
+                    android:textSize="@dimen/appbarTextSize"
                     android:transitionName="name" />
 
             </RelativeLayout>
@@ -94,13 +92,13 @@
 
     <include layout="@layout/content_profile" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_dialog_email"
-        app:layout_anchor="@id/app_bar"
-        app:layout_anchorGravity="bottom|end" />
+    <!--<android.support.design.widget.FloatingActionButton-->
+    <!--android:id="@+id/fab"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_margin="@dimen/fab_margin"-->
+    <!--android:src="@android:drawable/ic_dialog_email"-->
+    <!--app:layout_anchor="@id/app_bar"-->
+    <!--app:layout_anchorGravity="bottom|end" />-->
 
 </android.support.design.widget.CoordinatorLayout>

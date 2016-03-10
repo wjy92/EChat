@@ -42,21 +42,20 @@ public class ProfileActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         setSupportActionBar(mToolbar);
         mCircleImageView.setImageResource(R.mipmap.portrait_test1);
-
-        if (Build.VERSION.SDK_INT < 30)
+//        if (Build.VERSION.SDK_INT < 30)
             mToolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_24dp);
-        else {
-            mMaterialMenuDrawable = new MaterialMenuDrawable(this, Color.WHITE, MaterialMenuDrawable.Stroke.THIN);
-            mToolbar.setNavigationIcon(mMaterialMenuDrawable);
-            mMaterialMenuDrawable.setIconState(MaterialMenuDrawable.IconState.BURGER);
-            mMaterialMenuDrawable.setTransformationDuration(600);
-            mToolbar.post(new Runnable() {
-                @Override
-                public void run() {
-                    mMaterialMenuDrawable.animateIconState(MaterialMenuDrawable.IconState.ARROW);
-                }
-            });
-        }
+//        else {
+//            mMaterialMenuDrawable = new MaterialMenuDrawable(this, Color.WHITE, MaterialMenuDrawable.Stroke.THIN);
+//            mToolbar.setNavigationIcon(mMaterialMenuDrawable);
+//            mMaterialMenuDrawable.setIconState(MaterialMenuDrawable.IconState.BURGER);
+//            mMaterialMenuDrawable.setTransformationDuration(600);
+//            mToolbar.post(new Runnable() {
+//                @Override
+//                public void run() {
+//                    mMaterialMenuDrawable.animateIconState(MaterialMenuDrawable.IconState.ARROW);
+//                }
+//            });
+//        }
 
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,21 +63,21 @@ public class ProfileActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
     }
 
 
     @Override
     public void onBackPressed() {
-        if (mMaterialMenuDrawable != null)
-            mMaterialMenuDrawable.animateIconState(MaterialMenuDrawable.IconState.BURGER);
+//        if (mMaterialMenuDrawable != null)
+//            mMaterialMenuDrawable.animateIconState(MaterialMenuDrawable.IconState.BURGER);
         super.onBackPressed();
     }
 

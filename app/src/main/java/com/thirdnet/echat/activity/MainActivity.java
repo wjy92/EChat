@@ -1,10 +1,9 @@
 package com.thirdnet.echat.activity;
 
-import android.app.ActivityOptions;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -40,7 +39,7 @@ public class MainActivity extends AppCompatActivity
     public AppBarLayout mAppBar;
 
     @Bind(R.id.toolbar)
-    public Toolbar toolbar;
+    public Toolbar mToolbar;
 
     @Bind(R.id.drawer_layout)
     DrawerLayout mDrawer;
@@ -54,6 +53,10 @@ public class MainActivity extends AppCompatActivity
     @Bind(R.id.tl)
     TabLayout tl;
 
+    @Bind(R.id.toolbar_layout)
+    public CollapsingToolbarLayout mCollapsingLayout;
+
+
     /**
      * TabLayout中的显示标题
      */
@@ -64,15 +67,14 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        setSupportActionBar(toolbar);
+        setSupportActionBar(mToolbar);
         if (mTitles == null)
             mTitles = Arrays.asList(getResources().getString(R.string.main_tab1), getResources().getString(R.string.main_tab2), getResources().getString(R.string.main_tab3));
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, mDrawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                this, mDrawer, mToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         mDrawer.setDrawerListener(toggle);
         toggle.syncState();
         mNavigationView.setNavigationItemSelectedListener(this);
-
         final CircleImageView portrait = (CircleImageView) mNavigationView.getHeaderView(0).findViewById(R.id.portrait);
         portrait.setImageResource(R.mipmap.portrait_test1);
         RxView.clicks(portrait).subscribe(new Action1<Void>() {

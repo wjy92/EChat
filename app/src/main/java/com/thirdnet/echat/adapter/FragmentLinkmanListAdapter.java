@@ -51,7 +51,7 @@ public class FragmentLinkmanListAdapter extends RecyclerView.Adapter {
                                        ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation((MainActivity) mContext
                                                , Pair.create(((LinkmanViewHolder) holder).view, "info")
                                                , Pair.create((View) ((MainActivity) mContext).mAppBar, "appbar")
-//                                               , Pair.create((View) ((MainActivity) mContext).mToolbar, "toolbar")
+                                               , Pair.create((View) ((MainActivity) mContext).mToolbar, "toolbar")
 //                                               , Pair.create((View) ((LinkmanViewHolder) holder).circleImageView, "portrait")
 //                                               , Pair.create((View) ((LinkmanViewHolder) holder).textView, "name")
                                                , Pair.create((View) ((MainActivity) mContext).mCollapsingLayout, "collapsing_layout")

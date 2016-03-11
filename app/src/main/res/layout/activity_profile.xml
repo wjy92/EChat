@@ -61,13 +61,6 @@
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-
-            <!--<com.sloydev.collapsingavatartoolbar.CollapsingAvatarToolbar-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="?attr/actionBarSize"-->
-            <!--android:layout_marginTop="6dp"-->
-            <!--android:fitsSystemWindows="true">-->
-
             <!--<com.tr4android.support.extension.widget.CircleImageView-->
             <!--android:id="@id/cat_avatar"-->
             <!--android:layout_width="24dp"-->

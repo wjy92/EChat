@@ -9,6 +9,7 @@
 
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay"
@@ -34,5 +35,54 @@
             android:layout_height="match_parent" />
 
     </FrameLayout>
+
+    <View
+        android:id="@+id/dimming_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true" />
+
+    <com.tr4android.support.extension.widget.FloatingActionMenu
+        android:id="@+id/fab_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        app:fabMenuCloseIconAngle="135"
+        app:fabMenuCloseIconSrc="@drawable/ic_undo_white_24dp"
+        app:fabMenuLabelStyle="@style/label_style_dark">
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="80dp"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/ic_add_white_24dp" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/float_action_button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="操作A"
+            android:src="@mipmap/ic_folder_white_24dp"
+            app:backgroundTint="#2196f3"
+            app:fabSize="mini" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="操作B"
+            android:src="@mipmap/ic_folder_white_24dp"
+            app:backgroundTint="#4caf50"
+            app:fabSize="mini" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="操作C"
+            android:src="@mipmap/ic_folder_white_24dp"
+            app:backgroundTint="#ffeb3b"
+            app:fabSize="mini" />
+    </com.tr4android.support.extension.widget.FloatingActionMenu>
 
 </android.support.design.widget.CoordinatorLayout>

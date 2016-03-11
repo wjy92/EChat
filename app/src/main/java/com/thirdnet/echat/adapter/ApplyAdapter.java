@@ -41,7 +41,6 @@ public class ApplyAdapter extends RecyclerView.Adapter {
                                @Override
                                public void call(Void aVoid) {
                                    ((ApplyViewHolder) holder).progressBar.setVisibility(View.VISIBLE);
-                                   ((ApplyViewHolder) holder).view.setTranslationZ(2f);
                                }
                            }
                 );
@@ -50,7 +49,7 @@ public class ApplyAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return 5;
+        return 50;
     }
 
     class ApplyViewHolder extends RecyclerView.ViewHolder {

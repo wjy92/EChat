@@ -59,7 +59,6 @@ public class ConversationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_conversation);
         ButterKnife.bind(this);
         setSupportActionBar(mToolbar);
-
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

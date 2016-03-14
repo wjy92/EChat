@@ -19,8 +19,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:transitionName="collapsing_layout"
+            app:collapsedTitleTextAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title"
             app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            app:expandedTitleMarginStart="@dimen/activity_horizontal_margin_72"
+            app:expandedTitleTextAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:title="杨水强">
 
             <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
@@ -48,7 +52,9 @@
                     android:text="杨水强"
                     android:textColor="@color/textWhite"
                     android:textSize="@dimen/appbarTextSize"
-                    android:transitionName="name" />
+                    android:transitionName="name"
+                    android:visibility="gone" />
+
 
             </RelativeLayout>
 
@@ -59,27 +65,8 @@
                 android:layout_height="?attr/actionBarSize"
                 android:transitionName="toolbar"
                 app:layout_collapseMode="pin"
-                app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-            <!--<com.tr4android.support.extension.widget.CircleImageView-->
-            <!--android:id="@id/cat_avatar"-->
-            <!--android:layout_width="24dp"-->
-            <!--android:layout_height="24dp"-->
-            <!--android:layout_gravity="center_vertical" />-->
-
-            <!--<TextView-->
-            <!--android:id="@id/cat_title"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_gravity="center_vertical"-->
-            <!--android:layout_marginLeft="16dp"-->
-            <!--android:fontFamily="sans-serif-medium"-->
-            <!--android:text="杨水强"-->
-            <!--android:textColor="@color/textWhite"-->
-            <!--android:textSize="@dimen/appbarTextSize" />-->
-
-            <!--</com.sloydev.collapsingavatartoolbar.CollapsingAvatarToolbar>-->
-
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:titleMarginStart="16dp" />
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 

@@ -1,14 +1,8 @@
 package com.thirdnet.echat.activity;
 
-import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.transition.Slide;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.View;
 
@@ -43,7 +37,8 @@ public class ProfileActivity extends AppCompatActivity {
         setSupportActionBar(mToolbar);
         mCircleImageView.setImageResource(R.mipmap.portrait_test1);
 //        if (Build.VERSION.SDK_INT < 30)
-            mToolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_24dp);
+        mToolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_24dp);
+        mToolbar.setLogo(getResources().getDrawable(R.drawable.ic_fix_collapasing));
 //        else {
 //            mMaterialMenuDrawable = new MaterialMenuDrawable(this, Color.WHITE, MaterialMenuDrawable.Stroke.THIN);
 //            mToolbar.setNavigationIcon(mMaterialMenuDrawable);

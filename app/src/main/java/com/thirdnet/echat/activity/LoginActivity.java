@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.dd.morphingbutton.MorphingButton;
 import com.dd.morphingbutton.impl.IndeterminateProgressButton;
 import com.jakewharton.rxbinding.view.RxView;
+import com.rey.material.widget.EditText;
 import com.thirdnet.echat.R;
 
 import java.util.concurrent.TimeUnit;

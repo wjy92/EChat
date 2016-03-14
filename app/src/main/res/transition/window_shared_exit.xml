@@ -2,5 +2,6 @@
 <transitionSet xmlns:android="http://schemas.android.com/apk/res/android">
     <changeImageTransform android:duration="@integer/window_animation_duration" />
     <changeBounds android:duration="@integer/window_animation_duration" />
+    <changeClipBounds android:duration="@integer/window_animation_duration" />
     <changeTransform android:duration="@integer/window_animation_duration" />
 </transitionSet>

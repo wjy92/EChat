@@ -54,9 +54,6 @@ public class MainActivity extends AppCompatActivity
     @Bind(R.id.tl)
     TabLayout tl;
 
-    @Bind(R.id.toolbar_layout)
-    public CollapsingToolbarLayout mCollapsingLayout;
-
 
     /**
      * TabLayout中的显示标题

@@ -13,6 +13,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Pair;
 import android.view.Menu;
 import android.view.View;
 
@@ -87,7 +88,7 @@ public class ApplyActivity extends AppCompatActivity {
         });
 
 
-        mRv.setHasFixedSize(true);
+//        mRv.setHasFixedSize(false);
         mRv.setLayoutManager(new LinearLayoutManager(this));
         mAdapter = new ApplyAdapter(this);
         mRv.setAdapter(mAdapter);
@@ -107,10 +108,14 @@ public class ApplyActivity extends AppCompatActivity {
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            if (Build.VERSION.SDK_INT < 21)
+                            if (Build.VERSION.SDK_INT < 21) {
                                 startActivity(new Intent(ApplyActivity.this, AddActivity.class));
-                            else
-                                startActivity(new Intent(ApplyActivity.this, AddActivity.class), ActivityOptions.makeSceneTransitionAnimation(ApplyActivity.this, mAppBar, "appbar").toBundle());
+                            } else {
+                                ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(ApplyActivity.this
+                                        , Pair.create((View) mToolbar, "toolbar")
+                                );
+                                startActivity(new Intent(ApplyActivity.this, AddActivity.class), activityOptions.toBundle());
+                            }
                         }
                     }, 300);
 
@@ -124,8 +129,6 @@ public class ApplyActivity extends AppCompatActivity {
                 floatingActionMenu.collapse();
             }
         });
-
-        
 
 
     }

@@ -35,6 +35,7 @@
             android:theme="@style/ProfileTheme.NoActionBar" />
         <activity
             android:name=".activity.ApplyActivity"
+            android:label="工单管理"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity

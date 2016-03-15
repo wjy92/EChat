@@ -21,7 +21,7 @@
             android:transitionName="collapsing_layout"
             app:collapsedTitleTextAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title"
             app:contentScrim="?attr/colorPrimary"
-            app:expandedTitleMarginStart="@dimen/activity_horizontal_margin_72"
+            app:expandedTitleMarginStart="@dimen/activity_margin_72dp"
             app:expandedTitleTextAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:title="杨水强">

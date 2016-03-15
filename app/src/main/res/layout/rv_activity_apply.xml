@@ -1,19 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
-    android:background="@drawable/sl_fragment_message"
-    android:clickable="true">
+    android:layout_height="wrap_content"
+    android:background="@drawable/sl_fragment_message">
+
+
+    <com.tr4android.support.extension.widget.CircleImageView
+        android:id="@+id/circleIv1"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin" />
+
+    <com.tr4android.support.extension.widget.CircleImageView
+        android:id="@+id/circleIv2"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignBottom="@id/circleIv1"
+        android:layout_marginLeft="@dimen/activity_margin_8dp"
+        android:layout_toRightOf="@id/circleIv1" />
+
+    <com.tr4android.support.extension.widget.CircleImageView
+        android:id="@+id/circleIv3"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignBottom="@id/circleIv2"
+        android:layout_marginLeft="@dimen/activity_margin_8dp"
+        android:layout_toRightOf="@id/circleIv2" />
+
+    <com.tr4android.support.extension.widget.CircleImageView
+        android:id="@+id/circleIv4"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignBottom="@id/circleIv3"
+        android:layout_marginLeft="@dimen/activity_margin_8dp"
+        android:layout_toRightOf="@id/circleIv3" />
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/circleIv1"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/activity_margin_8dp"
         android:maxLines="1"
-        android:text="工单标题"
+        android:text="AlphaGo三战三胜后，李世石“神之一手”意外扳回一分，今日正午最后一局开赛，巅峰对决将如何收场？"
         android:textColor="@color/textBlack"
         android:textSize="@dimen/textSize" />
 
@@ -22,13 +54,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/title"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin_8"
-        android:maxLines="1"
-        android:text="工单内容工单内容工单内容工单内容"
+        android:layout_marginTop="@dimen/activity_margin_8dp"
+        android:maxLines="2"
+        android:text="李世石已报警"
         android:textColor="@color/sencondaryTextBlack"
         android:textSize="@dimen/textSize" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:background="@color/divideBlack" />
 
     <ProgressBar
         android:id="@+id/progressbar"
@@ -38,6 +80,6 @@
         android:layout_alignParentBottom="true"
         android:indeterminate="true"
         android:visibility="gone" />
-
-
 </RelativeLayout>
+
+

@@ -20,9 +20,103 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             android:transitionName="toolbar"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:titleMarginStart="@dimen/activity_margin_16dp" />
 
     </android.support.design.widget.AppBarLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <TextView
+            android:id="@+id/hint_accept"
+            android:layout_width="@dimen/activity_margin_72dp"
+            android:layout_height="wrap_content"
+            android:hint="收件人"
+            android:paddingBottom="@dimen/activity_margin_16dp"
+            android:paddingLeft="@dimen/activity_margin_16dp"
+            android:paddingTop="@dimen/activity_margin_16dp"
+            android:textColor="@color/sencondaryTextBlack"
+            android:textSize="@dimen/textSize" />
+
+        <EditText
+            android:id="@+id/accept"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/hint_accept"
+            android:background="@color/white"
+            android:gravity="top|left"
+            android:hint="点击选择收件人"
+            android:lineSpacingExtra="10dp"
+            android:paddingBottom="@dimen/activity_margin_16dp"
+            android:paddingRight="@dimen/activity_margin_16dp"
+            android:paddingTop="@dimen/activity_margin_16dp"
+            android:textColor="@color/textBlack"
+            android:textSize="@dimen/textSize" />
+
+        <View
+            android:id="@+id/divide1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/accept"
+            android:background="@color/divideBlack" />
+
+        <TextView
+            android:id="@+id/hint_title"
+            android:layout_width="@dimen/activity_margin_72dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/divide1"
+            android:hint="主题"
+            android:paddingBottom="@dimen/activity_margin_16dp"
+            android:paddingLeft="@dimen/activity_margin_16dp"
+            android:paddingTop="@dimen/activity_margin_16dp"
+            android:textColor="@color/sencondaryTextBlack"
+            android:textSize="@dimen/textSize" />
+
+        <EditText
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/divide1"
+            android:layout_toRightOf="@id/hint_title"
+            android:background="@color/white"
+            android:gravity="top|left"
+            android:hint="点击填写主题"
+            android:lineSpacingExtra="10dp"
+            android:paddingBottom="@dimen/activity_margin_16dp"
+            android:paddingRight="@dimen/activity_margin_16dp"
+            android:paddingTop="@dimen/activity_margin_16dp"
+            android:textColor="@color/textBlack"
+            android:textSize="@dimen/textSize" />
+
+        <View
+            android:id="@+id/divide2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/title"
+            android:background="@color/divideBlack" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/divide2"
+            android:background="@color/white"
+            android:gravity="top|left"
+            android:hint="点击填写内容"
+            android:lineSpacingExtra="10dp"
+            android:paddingBottom="@dimen/activity_margin_16dp"
+            android:paddingLeft="@dimen/activity_margin_16dp"
+            android:paddingRight="@dimen/activity_margin_16dp"
+            android:paddingTop="@dimen/activity_margin_16dp"
+            android:textColor="@color/textBlack"
+            android:textSize="@dimen/textSize" />
+
+    </RelativeLayout>
 
 
 </android.support.design.widget.CoordinatorLayout>

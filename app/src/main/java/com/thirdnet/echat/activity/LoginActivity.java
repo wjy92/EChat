@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import com.dd.morphingbutton.MorphingButton;
 import com.dd.morphingbutton.impl.IndeterminateProgressButton;
 import com.jakewharton.rxbinding.view.RxView;
-import com.rey.material.widget.EditText;
 import com.thirdnet.echat.R;
 
 import java.util.concurrent.TimeUnit;
@@ -101,7 +100,7 @@ public class LoginActivity extends AppCompatActivity {
                 .height((int) getResources().getDimension(R.dimen.login_mp_height_56))
                 .color(getResources().getColor(R.color.morphing_gray_green))
                 .colorPressed(getResources().getColor(R.color.morphing_gray_green_dark))
-                .icon(R.drawable.ic_done);
+                .icon(R.drawable.ic_done_white_24dp);
         btnMorph.morph(circle);
     }
 

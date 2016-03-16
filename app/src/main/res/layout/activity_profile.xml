@@ -24,7 +24,7 @@
             app:expandedTitleMarginStart="@dimen/activity_margin_72dp"
             app:expandedTitleTextAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:title="杨水强">
+            app:title="联系人">
 
             <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
@@ -39,22 +39,6 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="@dimen/activity_horizontal_margin"
                     android:transitionName="portrait" />
-
-                <TextView
-                    android:id="@+id/name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                    android:layout_marginRight="@dimen/activity_horizontal_margin"
-                    android:layout_toRightOf="@id/portrait"
-                    android:maxLines="1"
-                    android:text="杨水强"
-                    android:textColor="@color/textWhite"
-                    android:textSize="@dimen/appbarTextSize"
-                    android:transitionName="name"
-                    android:visibility="gone" />
-
 
             </RelativeLayout>
 

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/message"
-        android:icon="@drawable/ic_message"
+        android:icon="@drawable/ic_message_white_24dp"
         android:orderInCategory="100"
         android:title="@string/action_message"
         app:showAsAction="always" />

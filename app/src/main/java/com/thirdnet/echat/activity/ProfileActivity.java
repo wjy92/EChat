@@ -38,7 +38,7 @@ public class ProfileActivity extends AppCompatActivity {
         mCircleImageView.setImageResource(R.mipmap.portrait_test1);
 //        if (Build.VERSION.SDK_INT < 30)
         mToolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_24dp);
-        mToolbar.setLogo(getResources().getDrawable(R.drawable.ic_fix_collapasing));
+        mToolbar.setLogo(getResources().getDrawable(R.drawable.ic_fix_collapasing_16dp));
 //        else {
 //            mMaterialMenuDrawable = new MaterialMenuDrawable(this, Color.WHITE, MaterialMenuDrawable.Stroke.THIN);
 //            mToolbar.setNavigationIcon(mMaterialMenuDrawable);

@@ -23,7 +23,7 @@
         android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:layout_toRightOf="@id/portrait"
         android:maxLines="1"
-        android:text="工单管理"
+        android:text="应用管理"
         android:textColor="@color/textBlack"
         android:textSize="@dimen/textSize"
         android:transitionName="name" />

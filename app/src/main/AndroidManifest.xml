@@ -31,15 +31,16 @@
             android:label="@string/title_activity_settings" />
         <activity
             android:name=".activity.ProfileActivity"
-            android:label="杨水强"
+            android:label="联系人"
             android:theme="@style/ProfileTheme.NoActionBar" />
         <activity
             android:name=".activity.ApplyActivity"
-            android:label="工单管理"
+            android:label="应用管理"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
             android:name=".activity.AddActivity"
+            android:label="新建"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 

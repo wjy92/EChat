@@ -11,39 +11,61 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.thirdnet.echat.activity.LoginActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/mid"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:orientation="vertical">
+        android:layout_centerInParent="true">
 
 
         <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="手机"
             android:inputType="number"
+            android:paddingLeft="@dimen/activity_margin_56dp"
             android:textCursorDrawable="@drawable/text_cursor_cyan"
             android:textSize="14sp"
             app:met_baseColor="@color/textBlack"
             app:met_floatingLabel="highlight"
             app:met_primaryColor="?colorPrimary"
             app:met_singleLineEllipsis="true" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/username"
+            android:layout_alignLeft="@id/username"
+            android:layout_marginBottom="26dp"
+            android:src="@drawable/ic_identity_primary_24dp" />
 
         <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/username"
             android:hint="密码"
             android:inputType="textPassword"
+            android:paddingLeft="@dimen/activity_margin_56dp"
             android:textCursorDrawable="@drawable/text_cursor_cyan"
             android:textSize="14sp"
             app:met_baseColor="@color/textBlack"
             app:met_floatingLabel="highlight"
+            app:met_iconLeft="@drawable/ic_identity_primary_24dp"
             app:met_primaryColor="?colorPrimary"
             app:met_singleLineEllipsis="true" />
 
-    </LinearLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/password"
+            android:layout_alignLeft="@id/password"
+            android:layout_marginBottom="26dp"
+            android:src="@drawable/ic_lock_primary_24dp" />
+    </RelativeLayout>
 
     <FrameLayout
         android:layout_width="match_parent"

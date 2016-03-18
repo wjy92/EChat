@@ -4,11 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import com.dd.morphingbutton.MorphingButton;
 import com.dd.morphingbutton.impl.IndeterminateProgressButton;
 import com.jakewharton.rxbinding.view.RxView;
+import com.rengwuxian.materialedittext.MaterialEditText;
 import com.thirdnet.echat.R;
+import com.thirdnet.echat.helper.MeasureHelper;
 
 import java.util.concurrent.TimeUnit;
 
@@ -20,6 +23,10 @@ public class LoginActivity extends AppCompatActivity {
 
     @Bind(R.id.btnLogin)
     IndeterminateProgressButton mBtnLogin;
+
+    @Bind(R.id.username)
+    MaterialEditText mUserName;
+
 
     private boolean mMorphFlag = false;
 
@@ -36,8 +43,12 @@ public class LoginActivity extends AppCompatActivity {
                         onBtnLoginClick();
                     }
                 });
-
-        morphToSquare(0);
+        mUserName.post(new Runnable() {
+            @Override
+            public void run() {
+                morphToSquare(0);
+            }
+        });
     }
 
     private void onBtnLoginClick() {
@@ -54,10 +65,10 @@ public class LoginActivity extends AppCompatActivity {
     private void simulateProgress() {
         int progressColor1 = getResources().getColor(R.color.morphing_blue_bright);
         int progressColor2 = getResources().getColor(R.color.morphing_green_light);
-        int progressColor3 = getResources().getColor(R.color.morphing_orange_light);
         int color = getResources().getColor(R.color.morphing_gray);
         int progressCornerRadius = getResources().getDimensionPixelSize(R.dimen.login_mp_corner_radius_4);
-        int width = (int) getResources().getDimension(R.dimen.login_mp_width_200);
+        int width = mUserName.getMeasuredWidth();
+//        int width = (int) getResources().getDimension(R.dimen.login_mp_width_200);
         int height = (int) getResources().getDimension(R.dimen.login_mp_height_8);
         int duration = getResources().getInteger(R.integer.login_mp_duration);
         new Handler().postDelayed(new Runnable() {
@@ -84,7 +95,7 @@ public class LoginActivity extends AppCompatActivity {
         MorphingButton.Params square = MorphingButton.Params.create()
                 .duration(duration)
                 .cornerRadius((int) getResources().getDimension(R.dimen.login_mp_corner_radius_2))
-                .width((int) getResources().getDimension(R.dimen.login_mp_width_100))
+                .width(mUserName.getMeasuredWidth() - MeasureHelper.dip2px(LoginActivity.this, 56 * 2))
                 .height((int) getResources().getDimension(R.dimen.login_mp_height_56))
                 .color(getResources().getColor(R.color.colorPrimary))
                 .colorPressed(getResources().getColor(R.color.colorPrimaryDark))
@@ -96,7 +107,7 @@ public class LoginActivity extends AppCompatActivity {
         MorphingButton.Params circle = MorphingButton.Params.create()
                 .duration(getResources().getInteger(R.integer.login_mp_duration))
                 .cornerRadius((int) getResources().getDimension(R.dimen.login_mp_height_56))
-                .width((int) getResources().getDimension(R.dimen.login_mp_height_56))
+                .width(mUserName.getMeasuredWidth() - MeasureHelper.dip2px(LoginActivity.this, 56 * 2))
                 .height((int) getResources().getDimension(R.dimen.login_mp_height_56))
                 .color(getResources().getColor(R.color.morphing_gray_green))
                 .colorPressed(getResources().getColor(R.color.morphing_gray_green_dark))

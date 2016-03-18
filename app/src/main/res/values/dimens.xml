@@ -9,7 +9,9 @@
     <dimen name="activity_margin_8dp">8dp</dimen>
     <dimen name="activity_margin_12dp">12dp</dimen>
     <dimen name="activity_margin_16dp">16dp</dimen>
+    <dimen name="activity_margin_24dp">24dp</dimen>
     <dimen name="activity_margin_32dp">32dp</dimen>
+    <dimen name="activity_margin_56dp">56dp</dimen>
     <dimen name="activity_margin_72dp">72dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
